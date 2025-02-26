@@ -1,4 +1,5 @@
 import React from "react";
+import "../stylesheet/navbar.css";
 
 
 const Navbar = () => {
@@ -15,11 +16,11 @@ const Navbar = () => {
 
             <div className="search">
                 <input type="text" placeholder="Sök..." className="search-input" />
+                <button className="search-button">Search</button>
             </div>
 
             <ul className="nav-list">
                 <button className="save-button">Save</button>
-                <button className="search-button">Search</button>
             </ul>
 
         </nav>
