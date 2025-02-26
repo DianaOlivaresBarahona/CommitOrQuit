@@ -1,5 +1,6 @@
 import Input from "./Input";
 import React, { useState } from "react";
+import "../stylesheet/searchField.css";
 
 const SearchField = () => {
   const [searchItem, setSearchItem] = useState("");
@@ -15,15 +16,16 @@ const SearchField = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="searchField" onSubmit={handleSubmit}>
         <Input
           name="Search"
-          label="Search"
           type="text"
           placeholder="What are you looking for? "
           onChange={handleChange}
         ></Input>
-        <button type="submit"></button>
+        <button className="searchButton" type="submit">
+          Search
+        </button>
       </form>
     </>
   );

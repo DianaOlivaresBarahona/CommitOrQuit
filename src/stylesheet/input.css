@@ -1,3 +1,11 @@
 .inputField {
-  font-family: "Courier New", Courier, monospace;
+  width: 100%;
+  padding: 2px 10px;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-style: normal;
+  border-radius: 10px;
+  border-color: black;
+  background-color: rgb(188, 188, 188);
+  color: rgb(0, 0, 0);
 }
