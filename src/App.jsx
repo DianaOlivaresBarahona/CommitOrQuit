@@ -4,6 +4,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import "./stylesheet/navbar.css";
 import Home from "./pages/Home";
+import Footer from "./components/footer";
 import Footer from "./components/Footer";
 
 const App = () => {
