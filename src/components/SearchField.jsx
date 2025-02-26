@@ -1,6 +1,7 @@
 import Input from "./Input";
 import React, { useState } from "react";
 import "../stylesheet/searchField.css";
+import ButtonText from "./ButtonText";
 
 const SearchField = () => {
   const [searchItem, setSearchItem] = useState("");
@@ -23,9 +24,7 @@ const SearchField = () => {
           placeholder="What are you looking for? "
           onChange={handleChange}
         ></Input>
-        <button className="searchButton" type="submit">
-          Search
-        </button>
+        <ButtonText type="submit" value="Search" />
       </form>
     </>
   );

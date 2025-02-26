@@ -1,0 +1,8 @@
+.buttonText {
+  background-color: #32009a;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-family: "Poppins";
+  padding: 5px 10px;
+}
