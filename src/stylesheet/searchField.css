@@ -1,0 +1,10 @@
+.searchField {
+  display: flex;
+  flex-direction: row;
+}
+.searchButton {
+  background-color: #32009a;
+  color: white;
+  border-radius: 10px;
+  border: none;
+}
