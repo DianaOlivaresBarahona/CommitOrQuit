@@ -10,7 +10,6 @@ const useProducts = () => {
   );
 
   console.log(data);
-  fff;
 
   return { data, error, isLoading };
 };
