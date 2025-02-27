@@ -37,8 +37,8 @@
 .all-button,
 .jewelry-button,
 .electronics-button,
-.men-apparel-button,
-.women-apparel-button,
+.mens-clothing-button,
+.womens-clothing-button,
 .filter-button {
     background-color: #AB9DC8;
 }
@@ -46,8 +46,8 @@
 .all-button { width: 40px; }
 .jewelry-button { width: 90px; }
 .electronics-button { width: 120px; }
-.men-apparel-button { width: 130px; }
-.women-apparel-button { width: 150px; }
+.mens-clothing-button { width: 130px; }
+.womens-clothing-button { width: 150px; }
 .filter-button { width: 45px; }
 
 
