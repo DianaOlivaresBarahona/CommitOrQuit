@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 import { useState } from "react";
 import CartButton from "./components/CartButton";
-import FavoritesPage from "./pages/FavoritesPage";  // ✅ Se till att den är importerad
+import FavoritesPage from "./pages/FavoritesPage";
 import Auth from "./components/Auth";  
 import Profile from "./pages/Profile"; 
 import FilterButtons from "./components/FilterButtons";
@@ -18,7 +18,6 @@ const App = () => {
 
   return (
     <>
-      {/* ✅ Se till att Header får props */}
       <Header showFavorite={showFavorite} setShowFavorite={setShowFavorite} />
       <FilterButtons />
 
