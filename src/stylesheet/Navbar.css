@@ -29,6 +29,61 @@ header {
   font-family: "Poppins", sans-serif;
   font-weight: 200;
 }
+/* Hamburgermeny */
+.menu-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-content.open {
+  transform: translateX(0);
+}
+
+.menu-content .close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.menu-content ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.menu-content li {
+  padding: 12px 0;
+  font-size: 18px;
+}
+
+.menu-content li hr {
+  border: 0;
+  height: 1px;
+  background: gray;
+  margin: 8px 0;
+}
+
+.menu-content a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.menu-content a:hover {
+  color: #007bff;
+}
 
 .menu-button {
   display: flex;
