@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+/* import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getProductById } from '../services/api'
 
@@ -31,3 +31,4 @@ const ProductDetails = () => {
 }
 
 export default ProductDetails
+ */

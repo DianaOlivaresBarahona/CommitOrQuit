@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+/* import { useEffect, useState } from 'react'
 import { getProducts } from '../services/api'
 import { Link } from 'react-router-dom'
 
@@ -33,3 +33,4 @@ const ProductList = () => {
 }
 
 export default ProductList
+ */

@@ -17,7 +17,7 @@ const SearchField = () => {
 
   return (
     <>
-      <form className="searchField" onSubmit={handleSubmit}>
+      <form classInputName="searchField" onSubmit={handleSubmit}>
         <Input
           name="Search"
           type="text"
