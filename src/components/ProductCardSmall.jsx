@@ -12,11 +12,16 @@ const ProductCardSmall = () => {
     <div className="product-card-small-group">
       {data.map((product) => (
         <div key={product.id} className="product-card-small">
+          <div className="product-small-img">
+            <img
+              className="product-img"
+              src={product.image}
+              alt={product.title}
+              width="100"
+            />
+          </div>
           <h2>{product.title}</h2>
           <p>{product.price} €</p>
-          <div className="product-small-img">
-            <img src={product.image} alt={product.title} width="100" />
-          </div>
         </div>
       ))}
     </div>
