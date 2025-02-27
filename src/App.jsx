@@ -23,8 +23,17 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/favorite" element={<FavoritesPage />} />
-        <Route path="/cart" element={<ShoppingCartPage showCart={showCart} setShowCart={setShowCart} />} />
+        
+
+        <Route 
+          path="/favorite" 
+          element={<FavoritesPage setShowFavorite={setShowFavorite} />} 
+        />
+
+        <Route 
+          path="/cart" 
+          element={<ShoppingCartPage showCart={showCart} setShowCart={setShowCart} />} 
+        />
         <Route path="/login" element={<Auth />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
@@ -36,3 +45,4 @@ const App = () => {
 };
 
 export default App;
+
