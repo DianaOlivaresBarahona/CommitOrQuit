@@ -9,6 +9,7 @@ import { useState } from "react";
 import CartButton from "./components/CartButton";
 import Auth from "./components/Auth";  
 import Profile from "./pages/Profile"; 
+import FilterButtons from "./components/FilterButtons";
 
 const App = () => {
   const [showCart, setShowCart] = useState(false);
@@ -16,6 +17,7 @@ const App = () => {
   return (
     <>
       <Header />
+      <FilterButtons />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
