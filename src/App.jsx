@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import "./stylesheet/navbar.css";
@@ -12,32 +12,23 @@ import Auth from "./components/Auth";
 import Profile from "./pages/Profile"; 
 import FilterButtons from "./components/FilterButtons";
 
-
 const App = () => {
   const [showCart, setShowCart] = useState(false);
   const [showFavorite, setShowFavorite] = useState(false);
 
   return (
     <>
-
-     <Header showFavorite={showFavorite} setShowFavorite={setShowFavorite} />
-    <FilterButtons />
+      <Header showFavorite={showFavorite} setShowFavorite={setShowFavorite} />
+      <FilterButtons />
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/favorite"
-          element={<FavoritesPage setShowFavorite={setShowFavorite} />}
-        />
-        <Route
-          path="/cart"
-          element={
-            <ShoppingCartPage showCart={showCart} setShowCart={setShowCart} />
-          }
-        />
+        <Route path="/favorite" element={<FavoritesPage />} />
+        <Route path="/cart" element={<ShoppingCartPage showCart={showCart} setShowCart={setShowCart} />} />
         <Route path="/login" element={<Auth />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
+
       <CartButton showCart={showCart} setShowCart={setShowCart} />
       <Footer />
     </>
