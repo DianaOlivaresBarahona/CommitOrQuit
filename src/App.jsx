@@ -7,8 +7,8 @@ import Footer from "./components/Footer";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 import { useState } from "react";
 import CartButton from "./components/CartButton";
-import Auth from "./components/Auth";  
-import Profile from "./pages/Profile"; 
+import Auth from "./components/Auth";
+import Profile from "./pages/Profile";
 
 const App = () => {
   const [showCart, setShowCart] = useState(false);
@@ -24,12 +24,12 @@ const App = () => {
             <ShoppingCartPage showCart={showCart} setShowCart={setShowCart} />
           }
         />
-        <Route path="/login" element={<Auth />} />  
-        <Route path="/profile" element={<Profile />} />  
+        <Route path="/login" element={<Auth />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <CartButton showCart={showCart} setShowCart={setShowCart} />
       <Footer />
-        </>
+    </>
   );
 };
 
