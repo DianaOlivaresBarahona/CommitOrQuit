@@ -1,9 +1,11 @@
 import React from "react";
 import "../stylesheet/navbar.css";
 import SearchField from "./searchfield";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const Navbar = () => {
+import FavoriteButton from "./FavoriteButton";
+
+const Navbar = ({ showFavorite, setShowFavorite }) => {
   useEffect(() => {
     if (window.lucide) {
       window.lucide.createIcons();
@@ -21,10 +23,10 @@ const Navbar = () => {
       </div>
 
       <SearchField />
-
-      <button className="save-button">
-        <i data-lucide="heart"></i>
-      </button>
+      <FavoriteButton
+        showFavorite={showFavorite}
+        setShowFavorite={setShowFavorite}
+      />
     </nav>
   );
 };

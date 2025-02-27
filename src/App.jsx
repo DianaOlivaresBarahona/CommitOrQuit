@@ -7,29 +7,35 @@ import Footer from "./components/Footer";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 import { useState } from "react";
 import CartButton from "./components/CartButton";
-import Auth from "./components/Auth";  
-import Profile from "./pages/Profile"; 
+import Auth from "./components/Auth";
+import Profile from "./pages/Profile";
+import FavoritesPage from "./pages/FavoritesPage";
 
 const App = () => {
   const [showCart, setShowCart] = useState(false);
+  const [showFavorite, setShowFavorite] = useState(false);
 
   return (
     <>
-      <Header />
+      <Header showFavorite={showFavorite} setShowFavorite={setShowFavorite} />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route
+          path="/favorite"
+          element={<FavoritesPage setShowFavorite={setShowFavorite} />}
+        />
         <Route
           path="/cart"
           element={
             <ShoppingCartPage showCart={showCart} setShowCart={setShowCart} />
           }
         />
-        <Route path="/login" element={<Auth />} />  
-        <Route path="/profile" element={<Profile />} />  
+        <Route path="/login" element={<Auth />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <CartButton showCart={showCart} setShowCart={setShowCart} />
       <Footer />
-        </>
+    </>
   );
 };
 
