@@ -1,0 +1,28 @@
+.cartBtn {
+  background-color: #32009a; /* Mörklila bakgrund */
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  position: fixed;
+  bottom: 20px; /* Flyttar knappen till botten */
+  right: 20px; /* Justerar den till höger */
+  z-index: 1000; /* Säkerställer att den ligger över andra element */
+  padding: 15px;
+  border-radius: 50%; /* Rund form */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ger en lätt skugga */
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.cartBtn:hover {
+  background-color: #25006e; /* Lite mörkare lila vid hover */
+  opacity: 0.9;
+}
+
+.cartBtn svg {
+  color: white; /* Gör ikonen vit */
+  width: 24px;
+  height: 24px;
+}
