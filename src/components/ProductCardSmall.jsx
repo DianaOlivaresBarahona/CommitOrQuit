@@ -2,7 +2,7 @@ import React from "react";
 import useProducts from "../context/UseProducts";
 import "../stylesheet/productCardSmall.css";
 
-const ProductCardSmall = () => {
+const ProductCardSmall = ({ addToCart }) => {
   const { data, error, isLoading } = useProducts();
 
   if (error) return <div>Failed to load</div>;
@@ -22,6 +22,12 @@ const ProductCardSmall = () => {
           </div>
           <h2>{product.title}</h2>
           <p>{product.price} €</p>
+          <button 
+            className="add-to-cart-button" 
+            onClick={() => addToCart(product)}
+          >
+            Add to cart
+          </button>
         </div>
       ))}
     </div>
