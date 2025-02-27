@@ -7,9 +7,11 @@ import Footer from "./components/Footer";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 import { useState } from "react";
 import CartButton from "./components/CartButton";
-import Auth from "./components/Auth";
-import Profile from "./pages/Profile";
 import FavoritesPage from "./pages/FavoritesPage";
+import Auth from "./components/Auth";  
+import Profile from "./pages/Profile"; 
+import FilterButtons from "./components/FilterButtons";
+
 
 const App = () => {
   const [showCart, setShowCart] = useState(false);
@@ -17,7 +19,10 @@ const App = () => {
 
   return (
     <>
-      <Header showFavorite={showFavorite} setShowFavorite={setShowFavorite} />
+
+     <Header showFavorite={showFavorite} setShowFavorite={setShowFavorite} />
+    <FilterButtons />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
