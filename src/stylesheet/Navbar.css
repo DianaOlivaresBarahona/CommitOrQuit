@@ -28,6 +28,7 @@ header {
 .logo-text {
   font-family: "Poppins", sans-serif;
   font-weight: 200;
+  margin-left: 10px;
 }
 
 .menu-content {
@@ -115,9 +116,13 @@ header {
   height: 40px;
 }
 
+.favoriteBtn {
+  margin-left: auto;
+}
+
 @media (min-width: 768px) {
   .Navbar {
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
   }
 
@@ -129,5 +134,9 @@ header {
   .save-button {
     position: absolute;
     right: 20px;
+  }
+
+  .favoriteBtn {
+    margin-left: auto;
   }
 }

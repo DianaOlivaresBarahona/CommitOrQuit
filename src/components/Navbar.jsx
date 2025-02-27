@@ -3,8 +3,16 @@ import { Link } from "react-router-dom";
 import "../stylesheet/navbar.css";
 import SearchField from "./searchfield";
 
-const Navbar = () => {
+
+
+import FavoriteButton from "./FavoriteButton";
+
+
+
+
+const Navbar = ({ showFavorite, setShowFavorite }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+
 
   useEffect(() => {
     if (window.lucide) {
@@ -24,9 +32,13 @@ const Navbar = () => {
 
       <SearchField />
 
-      <button className="save-button">
-        <i data-lucide="heart"></i>
-      </button>
+      <FavoriteButton
+        showFavorite={showFavorite}
+        setShowFavorite={setShowFavorite}
+      />
+
+
+      
 
       <div className={`menu-content ${menuOpen ? "open" : ""}`}>
         <button className="close-button" onClick={() => setMenuOpen(false)}>
@@ -47,6 +59,7 @@ const Navbar = () => {
           <li><Link to="/terms" onClick={() => setMenuOpen(false)}>TERMS & CONDITIONS</Link></li>
         </ul>
       </div>
+
     </nav>
   );
 };
