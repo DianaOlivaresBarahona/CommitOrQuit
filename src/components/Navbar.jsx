@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../stylesheet/Navbar.css";
+import "../stylesheet/navbar.css";
 import SearchField from "./searchfield";
 
 const Navbar = () => {
