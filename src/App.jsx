@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 import { useState } from "react";
 import CartButton from "./components/CartButton";
+import { SearchProvider } from "./context/SearchContext";
 import FavoritesPage from "./pages/FavoritesPage";
 import Auth from "./components/Auth";  
 import Profile from "./pages/Profile"; 
@@ -18,6 +19,7 @@ const App = () => {
 
   return (
     <>
+      <SearchProvider>
       <Header showFavorite={showFavorite} setShowFavorite={setShowFavorite} />
       <FilterButtons />
 
@@ -40,6 +42,7 @@ const App = () => {
 
       <CartButton showCart={showCart} setShowCart={setShowCart} />
       <Footer />
+      </SearchProvider>
     </>
   );
 };
