@@ -32,3 +32,18 @@ const ProductDetails = () => {
 
 export default ProductDetails
  */
+
+import SearchField from "../components/searchfield";
+import React from "react";
+import ProductCardLarge from "../components/ProductCardLarge";
+
+const ProductDetails = () => {
+  return (
+    <div>
+      <SearchField />
+      <ProductCardLarge />
+    </div>
+  );
+};
+
+export default ProductDetails;
