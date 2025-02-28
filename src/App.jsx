@@ -9,26 +9,29 @@ import { useState } from "react";
 import CartButton from "./components/CartButton";
 import Auth from "./components/Auth";
 import Profile from "./pages/Profile";
+import { SearchProvider } from "./context/SearchContext";
 
 const App = () => {
   const [showCart, setShowCart] = useState(false);
 
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/cart"
-          element={
-            <ShoppingCartPage showCart={showCart} setShowCart={setShowCart} />
-          }
-        />
-        <Route path="/login" element={<Auth />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
-      <CartButton showCart={showCart} setShowCart={setShowCart} />
-      <Footer />
+      <SearchProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/cart"
+            element={
+              <ShoppingCartPage showCart={showCart} setShowCart={setShowCart} />
+            }
+          />
+          <Route path="/login" element={<Auth />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+        <CartButton showCart={showCart} setShowCart={setShowCart} />
+        <Footer />
+      </SearchProvider>
     </>
   );
 };
