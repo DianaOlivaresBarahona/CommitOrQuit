@@ -5,6 +5,7 @@ const ButtonText = ({ type, onClick, value }) => {
     <>
       <button className="buttonText" type={type} onClick={onClick}>
         {value}
+        <i data-lucide="search"></i>
       </button>
     </>
   );
