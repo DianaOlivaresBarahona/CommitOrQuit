@@ -1,11 +1,12 @@
+import React from "react";
 import "../stylesheet/ConfirmationPage.css";
 import { BsBagCheck } from "react-icons/bs";
+
 
 
 const ConfirmationPage = () => {
     return (
         <div className="confirmation-page">
-            <Navbar />
             <main className="content">
                 <h2>Order confirmation</h2>
                 <span className="icon">

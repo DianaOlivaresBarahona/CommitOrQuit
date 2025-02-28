@@ -1,0 +1,106 @@
+.confirmation-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f8f8f8;
+    font-family: 'poppins', sans-serif;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+.content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    width: 90%;
+}
+
+
+h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+
+.icon {
+    font-size: 2.5rem;
+    color: #4b0082;
+    margin-bottom: 10px;
+}
+
+
+.thank-you h3 {
+    font-size: 1rem;
+    color: #4b0082;
+    margin-bottom: 5px;
+}
+
+
+.thank-you p {
+    font-size: 1rem;
+    color: #555;
+}
+
+
+.subscribe {
+    margin-top: 1.5rem;
+}
+
+
+.subscribe input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+
+.subscribe-btn {
+    background-color: #4b0082;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+}
+
+
+.subscribe-btn:hover {
+    background-color: #370061;
+}
+
+
+
+
+@media (min-width: 768px) {
+    .content {
+        padding: 2rem;
+        max-width: 400px;
+    }
+
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+
+    .icon {
+        font-size: 3rem;
+    }
+
+
+    .subscribe-btn {
+        font-size: 1rem;
+    }
+}
+

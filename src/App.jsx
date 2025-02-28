@@ -13,6 +13,7 @@ import Auth from "./components/Auth";
 import Profile from "./pages/Profile";
 import FilterButtons from "./components/FilterButtons";
 import CheckoutPage from "./pages/CheckoutPage";
+import ConfirmationPage from "./pages/ConfirmationPage";
 
 const App = () => {
   const [showCart, setShowCart] = useState(false);
@@ -41,6 +42,7 @@ const App = () => {
           <Route path="/login" element={<Auth />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/confirmation" element={<ConfirmationPage />} />
         </Routes>
 
         <CartButton showCart={showCart} setShowCart={setShowCart} />
