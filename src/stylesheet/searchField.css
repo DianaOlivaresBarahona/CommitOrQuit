@@ -2,9 +2,22 @@
   display: flex;
   flex-direction: row;
 }
-.searchButton {
-  background-color: #32009a;
-  color: white;
-  border-radius: 10px;
-  border: none;
+
+.search-wrapper {
+  position: relative; /* Låt den hamna i flödet */
+  top: 30px; /* Skjut ner den så den hamnar under navbaren */
+  width: 100%;
+  background: rgb(255, 255, 255);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Se till att den är synlig */
+}
+
+.search-wrapper.visible {
+  display: flex; /* Visar sökfältet när .visible läggs till */
+}
+
+.search-wrapper.hidden {
+  display: none;
 }

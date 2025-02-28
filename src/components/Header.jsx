@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
+import "../stylesheet/header.css";
 
 const Header = ({ showFavorite, setShowFavorite }) => {
   return (

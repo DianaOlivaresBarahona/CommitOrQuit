@@ -1,8 +1,8 @@
 .buttonText {
-  background-color: #32009a;
-  color: white;
+  background-color: #ffffff;
+  color: rgb(95, 95, 95);
   border-radius: 10px;
   border: none;
-  font-family: "Poppins";
+
   padding: 5px 10px;
 }
