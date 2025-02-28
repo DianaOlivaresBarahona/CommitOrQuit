@@ -24,20 +24,27 @@ const ProductDetail = () => {
           alt={product.title}
           width="200"
         />
-        <h2>{product.title}</h2>
-        <div className="ratings">
-          <p>⭐ {product.rating.rate}</p>
-          <p>{product.rating.count} reviews</p>{" "}
-        </div>{" "}
-        <p>{product.description}</p>
-        <p className="price">€ {product.price} </p>
-        <button
-          className="add-to-cart-button"
-          onClick={() => addToCart(product)}
-        >
-          Add to cart
-        </button>
-        <FavoriteButton />
+        <div className="product-detail-info">
+          <div className="product-info">
+            <h2>{product.title}</h2>
+            <div className="ratings">
+              <p>⭐ {product.rating.rate}</p>
+              <p>{product.rating.count} reviews</p>{" "}
+            </div>{" "}
+            <p>{product.description}</p>
+            <p className="price">€ {product.price} </p>
+          </div>
+          <div className="product-detail-buttons">
+            {" "}
+            <button
+              className="add-to-cart-button"
+              onClick={() => addToCart(product)}
+            >
+              Add to cart
+            </button>
+            <FavoriteButton />
+          </div>
+        </div>
       </div>
     </>
   );

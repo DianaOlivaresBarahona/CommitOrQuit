@@ -25,19 +25,42 @@
   align-items: space-around;
   justify-content: flex-start;
   max-width: 250px;
-  gap: 10px;
-
-  .ratings {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-  }
-
-  .price {
-    font-weight: bold;
-    font-size: 24px;
-  }
+  gap: 20px;
 }
 
-@media (min-width: 1056px) {
+.ratings {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.product-detail-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .product-detail-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    max-width: 90vh;
+  }
+
+  .product-detail-img {
+    width: 900px;
+  }
 }
