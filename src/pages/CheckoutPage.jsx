@@ -1,7 +1,14 @@
 import React from "react";
 import "../stylesheet/checkoutPage.css";
+import {useNavigate} from "react-router-dom"
 
 const CheckoutPage = () => {
+  const navigate = useNavigate();
+
+  const handleSubmitOrder = () => { 
+    navigate("/confirmation"); 
+   };
+  
   return (
     <div className="checkout-page">
       <h1>Check and submit your order</h1>
@@ -38,7 +45,7 @@ const CheckoutPage = () => {
         </div>
       </div>
 
-      <button className="checkout-button">Submit order</button>
+      <button className="checkout-button" onClick={handleSubmitOrder}> Submit order </button>
 
       <p className="checkout-terms">
         By placing this order, you agree to our{" "}
