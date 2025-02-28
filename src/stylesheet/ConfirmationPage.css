@@ -4,20 +4,23 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #f8f8f8;
-    font-family: 'poppins', sans-serif;
+    /* background-color: #f8f8f8; */
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     padding: 1rem;
 }
 
 
 .content {
-    background: white;
-    padding: 1.5rem;
+    background: #f9f9f9;
+    padding: 2rem;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 100%;
     width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -27,80 +30,89 @@ h2 {
     margin-bottom: 10px;
 }
 
-
 .icon {
     font-size: 2.5rem;
-    color: #4b0082;
-    margin-bottom: 10px;
+    color: #32009A;
+    margin-bottom: 15px;
 }
 
+
+.thank-you {
+    text-align: left;
+    max-width: 300px;
+}
 
 .thank-you h3 {
-    font-size: 1rem;
-    color: #4b0082;
+    font-size: 1.2rem;
+    color: #32009A;
     margin-bottom: 5px;
 }
-
 
 .thank-you p {
     font-size: 1rem;
     color: #555;
 }
 
-
 .subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     margin-top: 1.5rem;
+    width: 100%;
+    max-width: 350px;
 }
-
 
 .subscribe input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 10px;
     font-size: 1rem;
+    margin-bottom: 10px;
 }
 
-
 .subscribe-btn {
-    background-color: #4b0082;
+    background-color: #32009A;
     color: white;
     padding: 10px 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
     width: 100%;
+    max-width: 250px;
     font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
-
 
 .subscribe-btn:hover {
-    background-color: #370061;
+    background-color: #5a00ff;
 }
-
-
 
 
 @media (min-width: 768px) {
     .content {
-        padding: 2rem;
-        max-width: 400px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        max-width: 800px;
     }
 
-
-    h2 {
-        font-size: 1.8rem;
+    .thank-you {
+        max-width: 300px;
     }
 
-
-    .icon {
-        font-size: 3rem;
+    .subscribe {
+        align-items: flex-start;
     }
 
+    .subscribe input {
+        width: 250px;
+    }
 
     .subscribe-btn {
         font-size: 1rem;
+        width: 100%;
+        justify-content: center;
     }
 }
-
