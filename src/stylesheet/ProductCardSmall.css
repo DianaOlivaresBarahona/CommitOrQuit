@@ -13,17 +13,17 @@ h2 {
   color: #666666;
   flex-wrap: wrap;
   text-align: center;
-  max-width: 250px;
+  max-width: 120px;
 }
 
 .product-small-img {
   display: flex;
   padding: 1rem;
-  margin: 2rem 0 0.5rem;
+  margin: 0 0 0.5rem;
   text-align: center;
   align-items: center;
-  height: 350px;
-  width: 250px;
+  height: 210px;
+  width: 160px;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.17);
@@ -36,9 +36,31 @@ h2 {
   align-items: center;
   max-width: 300px;
   padding: 0;
-  margin: 0;
+  margin: 0.5rem 0.5rem 2rem 0.5rem;
+}
+
+.product-card-small-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .product-img {
   width: 100%;
+}
+
+.product-small-img:hover {
+  transition: transform 0.5s ease;
+}
+
+.product-small-img:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 1024px) {
+  .product-small-img {
+    height: 400px;
+    width: 290px;
+    margin: 2rem;
+  }
 }
