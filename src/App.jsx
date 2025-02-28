@@ -12,8 +12,10 @@ import FavoritesPage from "./pages/FavoritesPage";
 import Auth from "./components/Auth";
 import Profile from "./pages/Profile";
 import FilterButtons from "./components/FilterButtons";
+import ProductPage from "./pages/ProductPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import ConfirmationPage from "./pages/ConfirmationPage";
+
 
 const App = () => {
   const [showCart, setShowCart] = useState(false);
@@ -41,6 +43,7 @@ const App = () => {
           />
           <Route path="/login" element={<Auth />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/confirmation" element={<ConfirmationPage />} />
         </Routes>

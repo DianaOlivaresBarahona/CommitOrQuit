@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useSearch } from "../context/SearchContext"; // ✅ Importera sökkontext
 import "../stylesheet/productCardSmall.css";
 
@@ -14,7 +15,11 @@ const ProductCardSmall = () => {
         (
           product // Nu använder vi de redan filtrerade produkterna
         ) => (
-          <div key={product.id} className="product-card-small">
+          <Link
+            to={`/product/${product.id}`}
+            key={product.id}
+            className="product-card-small"
+          >
             <div className="product-small-img">
               <img
                 className="product-img"
@@ -26,13 +31,13 @@ const ProductCardSmall = () => {
 
             <h2>{product.title}</h2>
             <p>{product.price} €</p>
-          <button 
-            className="add-to-cart-button" 
-            onClick={() => addToCart(product)}
-          >
-            Add to cart
-          </button>
-          </div>
+            <button
+              className="add-to-cart-button"
+              onClick={() => addToCart(product)}
+            >
+              Add to cart
+            </button>
+          </Link>
         )
       )}
     </div>
