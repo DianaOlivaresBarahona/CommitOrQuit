@@ -9,9 +9,11 @@ import { useState } from "react";
 import CartButton from "./components/CartButton";
 import { SearchProvider } from "./context/SearchContext";
 import FavoritesPage from "./pages/FavoritesPage";
-import Auth from "./components/Auth";  
-import Profile from "./pages/Profile"; 
+import Auth from "./components/Auth";
+import Profile from "./pages/Profile";
 import FilterButtons from "./components/FilterButtons";
+import CheckoutPage from "./pages/CheckoutPage";
+import ConfirmationPage from "./pages/ConfirmationPage";
 
 const App = () => {
   const [showCart, setShowCart] = useState(false);
@@ -20,32 +22,34 @@ const App = () => {
   return (
     <>
       <SearchProvider>
-      <Header showFavorite={showFavorite} setShowFavorite={setShowFavorite} />
-      <FilterButtons />
+        <Header showFavorite={showFavorite} setShowFavorite={setShowFavorite} />
+        <FilterButtons />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-        <Route 
-          path="/favorite" 
-          element={<FavoritesPage setShowFavorite={setShowFavorite} />} 
-        />
+          <Route
+            path="/favorite"
+            element={<FavoritesPage setShowFavorite={setShowFavorite} />}
+          />
 
-        <Route 
-          path="/cart" 
-          element={<ShoppingCartPage showCart={showCart} setShowCart={setShowCart} />} 
-        />
-        <Route path="/login" element={<Auth />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
+          <Route
+            path="/cart"
+            element={
+              <ShoppingCartPage showCart={showCart} setShowCart={setShowCart} />
+            }
+          />
+          <Route path="/login" element={<Auth />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/confirmation" element={<ConfirmationPage />} />
+        </Routes>
 
-      <CartButton showCart={showCart} setShowCart={setShowCart} />
-      <Footer />
+        <CartButton showCart={showCart} setShowCart={setShowCart} />
+        <Footer />
       </SearchProvider>
     </>
   );
 };
 
 export default App;
-
