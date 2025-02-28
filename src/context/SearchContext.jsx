@@ -16,7 +16,14 @@ export const SearchProvider = ({ children }) => {
 
   return (
     <SearchContext.Provider
-      value={{ searchItem, setSearchItem, filteredProducts, error, isLoading }}
+      value={{
+        searchItem,
+        setSearchItem,
+        filteredProducts,
+        allProducts: data,
+        error,
+        isLoading,
+      }}
     >
       {children}
     </SearchContext.Provider>

@@ -5,7 +5,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-.product-large-img {
+.product-detail-img {
   display: flex;
   padding: 1rem;
   margin: 2rem 0 0.5rem;
@@ -19,10 +19,11 @@
   justify-content: center;
 }
 
-.product-card-large {
+.product-detail-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: space-around;
+  justify-content: flex-start;
   max-width: 250px;
   gap: 10px;
 
@@ -30,6 +31,11 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
+  }
+
+  .price {
+    font-weight: bold;
+    font-size: 24px;
   }
 }
 
