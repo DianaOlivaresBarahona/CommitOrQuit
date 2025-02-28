@@ -1,0 +1,28 @@
+.favoriteBtn.empty {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  transition: all 0.3s ease;
+}
+
+.favoriteBtn.filled {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  transition: all 0.3s ease;
+}
+
+.favoriteBtn.empty .heart-empty {
+  color: transparent;
+  stroke: #808080;
+  fill: white;
+
+  stroke-width: 2px;
+}
+
+.favoriteBtn.filled .heart-filled {
+  color: black;
+  fill: black;
+}

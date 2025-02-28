@@ -26,6 +26,12 @@ const ProductCardSmall = () => {
 
             <h2>{product.title}</h2>
             <p>{product.price} €</p>
+          <button 
+            className="add-to-cart-button" 
+            onClick={() => addToCart(product)}
+          >
+            Add to cart
+          </button>
           </div>
         )
       )}
