@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../stylesheet/navbar.css";
 import SearchField from "./searchfield";
+import FavoriteButton from "./FavoriteButton";
 
-const Navbar = () => {
+const Navbar = ({ showFavorite, setShowFavorite }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -19,14 +20,15 @@ const Navbar = () => {
       </button>
 
       <div className="logo">
-        <h1 className="logo-text">KALEIDO</h1>
+        <Link to="/" className="logo-text">KALEIDO</Link>
       </div>
 
       <SearchField />
 
-      <button className="save-button">
-        <i data-lucide="heart"></i>
-      </button>
+      <FavoriteButton
+        showFavorite={showFavorite}
+        setShowFavorite={setShowFavorite}
+      />
 
       <div className={`menu-content ${menuOpen ? "open" : ""}`}>
         <button className="close-button" onClick={() => setMenuOpen(false)}>

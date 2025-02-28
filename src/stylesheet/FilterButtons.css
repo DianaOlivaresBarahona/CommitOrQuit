@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    gap: 8px;
+    margin: 0 auto;
+    max-width: 95%;
+}
+ 
+.filter-buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 40px;
+    white-space: nowrap; 
+}
+
+.filter-buttons button:hover {
+    background-color: #32009A;
+    color: white;
+}
+
+.all-button,
+.jewelry-button,
+.electronics-button,
+.mens-clothing-button,
+.womens-clothing-button,
+.filter-button {
+    background-color: #AB9DC8;
+}
+
+.all-button { width: 40px; }
+.jewelry-button { width: 90px; }
+.electronics-button { width: 120px; }
+.mens-clothing-button { width: 130px; }
+.womens-clothing-button { width: 150px; }
+.filter-button { width: 45px; }
+
+

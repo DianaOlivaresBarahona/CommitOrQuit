@@ -1,9 +1,9 @@
 import Navbar from "./Navbar";
 
-const Header = () => {
+const Header = ({ showFavorite, setShowFavorite }) => {
   return (
     <header>
-      <Navbar />
+      <Navbar showFavorite={showFavorite} setShowFavorite={setShowFavorite} />
     </header>
   );
 };
