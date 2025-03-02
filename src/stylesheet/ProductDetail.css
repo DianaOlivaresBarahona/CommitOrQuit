@@ -11,12 +11,17 @@
   margin: 2rem 0 0.5rem;
   text-align: center;
   align-items: center;
-  height: 350px;
+  height: auto;
   width: 250px;
-  overflow: hidden;
   border-radius: 10px;
   box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.17);
   justify-content: center;
+}
+
+.title {
+  overflow: visible;
+  white-space: normal;
+  text-align: left;
 }
 
 .product-detail-card {
@@ -42,6 +47,8 @@
 .product-detail-buttons {
   display: flex;
   flex-direction: row;
+  gap: 40px;
+  margin-top: 20px;
 }
 
 .product-info {
@@ -54,13 +61,9 @@
   .product-detail-card {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     gap: 40px;
-    max-width: 90vh;
-  }
-
-  .product-detail-img {
-    width: 900px;
+    max-width: 600px;
   }
 }

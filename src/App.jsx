@@ -15,7 +15,7 @@ import FilterButtons from "./components/FilterButtons";
 import ProductPage from "./pages/ProductPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import ConfirmationPage from "./pages/ConfirmationPage";
-
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   const [showCart, setShowCart] = useState(false);
@@ -24,6 +24,7 @@ const App = () => {
   return (
     <>
       <SearchProvider>
+        <ScrollToTop />
         <Header showFavorite={showFavorite} setShowFavorite={setShowFavorite} />
         <FilterButtons />
 
