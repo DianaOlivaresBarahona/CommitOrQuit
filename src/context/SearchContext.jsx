@@ -5,8 +5,9 @@ const SearchContext = createContext();
 
 export const SearchProvider = ({ children }) => {
   const [searchItem, setSearchItem] = useState(""); // Global sökterm
-  const [category, setCategory] = useState("All"); // (+) Ny kategori-state
+  const [category, setCategory] = useState("All"); //  Ny kategori-state
   const { data, error, isLoading } = useProducts(); // Hämtar produkter
+  const [favorites, setFavorites] = useState([]); // (+) Spara favorite products
 
   // 🔥 Flyttad filtrering hit
   const filteredProducts = data
@@ -22,6 +23,14 @@ export const SearchProvider = ({ children }) => {
         })
       : [];
 
+  const toggleFavorite = (product) => {
+    setFavorites((prevFavorites) => 
+      prevFavorites.some((fav) => fav.id === product.id)
+        ? prevFavorites.filter((fav) => fav.id !== product.id)
+        : [...prevFavorites, product]
+    );
+  };
+
   return (
     <SearchContext.Provider
       value={{
@@ -29,10 +38,11 @@ export const SearchProvider = ({ children }) => {
         setSearchItem,
         filteredProducts,
         allProducts: data,
+        favorites,
+        toggleFavorite,
         error,
         isLoading,
       }}
-
     >
       {children}
     </SearchContext.Provider>
