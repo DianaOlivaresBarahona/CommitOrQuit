@@ -1,7 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useSearch } from "../context/SearchContext"; // ✅ Use global state
+import { useSearch } from "../context/SearchContext";
+import { useCart } from "../context/CartContext";
 import "../stylesheet/productDetail.css";
+
 import { Heart } from "lucide-react";
 import { useEffect } from "react";
 
@@ -15,6 +17,15 @@ const ProductDetail = () => {
       window.lucide.createIcons();
     }
   }, []);
+
+import FavoriteButton from "./FavoriteButton";
+import AddCartBtn from "./AddCartBtn";
+
+const ProductDetail = () => {
+  const { id } = useParams();
+  const { allProducts, error, isLoading } = useSearch();
+  const { addToCart } = useCart();
+
 
   if (error) return <div>Failed to load product</div>;
   if (isLoading) return <div>Loading product...</div>;
@@ -46,13 +57,8 @@ const ProductDetail = () => {
           </div>
           <div className="product-detail-buttons">
             {" "}
-            <button
-              className="add-to-cart-button"
-              onClick={() => addToCart(product)}
-            >
-              Add to cart
-            </button>
 
+             <AddCartBtn onClick={() => addToCart(product)} />
             <button
                 className={`favorite-button-2 ${isFavorite ? "filled" : ""}`}
                 onClick={(e) => {
@@ -62,6 +68,7 @@ const ProductDetail = () => {
                 > 
                 <Heart size={24} color={isFavorite ? "black" : "grey"} fill={isFavorite ? "black" : "none"} />
               </button>
+
           </div>
         </div>
       </div>

@@ -4,9 +4,13 @@ import { useSearch } from "../context/SearchContext";
 import "../stylesheet/productCardSmall.css";
 import { Heart } from "lucide-react";
 import { useEffect } from "react";
+import AddCartBtn from "./AddCartBtn";
+import { useCart } from "../context/CartContext";
 
 const ProductCardSmall = ({ product }) => {
-  const { filteredProducts, favorites, toggleFavorite, error, isLoading } = useSearch();
+  const { filteredProducts, favorites, toggleFavorite, error, isLoading } =
+    useSearch();
+  const { addToCart } = useCart();
 
   useEffect(() => {
     if (window.lucide) {
@@ -27,28 +31,34 @@ const ProductCardSmall = ({ product }) => {
         return (
           <div key={product.id} className="product-card-small">
             <div className="product-small-img">
-              
               <button
                 className={`favorite-button ${isFavorite ? "filled" : ""}`}
                 onClick={(e) => {
-                  e.preventDefault(); 
+                  e.preventDefault();
                   toggleFavorite(product);
                 }}
-                >
-                <Heart size={24} color={isFavorite ? "black" : "grey"} fill={isFavorite ? "black" : "none"} />
+              >
+                <Heart
+                  size={24}
+                  color={isFavorite ? "black" : "grey"}
+                  fill={isFavorite ? "black" : "none"}
+                />
               </button>
-      
+
               <Link to={`/product/${product.id}`}>
-                <img className="product-img" src={product.image} alt={product.title} width="100" />
+                <img
+                  className="product-img"
+                  src={product.image}
+                  alt={product.title}
+                  width="100"
+                />
               </Link>
             </div>
-      
+
             <h2>{product.title}</h2>
             <p>{product.price} €</p>
-      
-            <button className="add-to-cart-button" onClick={() => addToCart(product)}>
-              Add to cart
-            </button>
+
+            <AddCartBtn onClick={() => addToCart(product)} />
           </div>
         );
       })}
