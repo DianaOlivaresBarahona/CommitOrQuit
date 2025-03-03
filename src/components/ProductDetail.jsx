@@ -6,26 +6,19 @@ import "../stylesheet/productDetail.css";
 
 import { Heart } from "lucide-react";
 import { useEffect } from "react";
-
+import FavoriteButton from "./FavoriteButton";
+import AddCartBtn from "./AddCartBtn";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const { allProducts, favorites, toggleFavorite, error, isLoading } = useSearch(); // ✅ Get full product list
+  const { addToCart } = useCart();
 
   useEffect(() => {
     if (window.lucide) {
       window.lucide.createIcons();
     }
   }, []);
-
-import FavoriteButton from "./FavoriteButton";
-import AddCartBtn from "./AddCartBtn";
-
-const ProductDetail = () => {
-  const { id } = useParams();
-  const { allProducts, error, isLoading } = useSearch();
-  const { addToCart } = useCart();
-
 
   if (error) return <div>Failed to load product</div>;
   if (isLoading) return <div>Loading product...</div>;
