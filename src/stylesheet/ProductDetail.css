@@ -8,7 +8,7 @@
 .product-detail-img {
   display: flex;
   padding: 1rem;
-  margin: 2rem 0 0.5rem;
+  margin: 0rem 0 0.5rem;
   text-align: center;
   align-items: center;
   height: auto;
@@ -31,6 +31,7 @@
   justify-content: flex-start;
   max-width: 250px;
   gap: 20px;
+  position: relative;
 }
 
 .ratings {
@@ -47,14 +48,35 @@
 .product-detail-buttons {
   display: flex;
   flex-direction: row;
-  gap: 40px;
+  gap: 10px;
   margin-top: 20px;
+  align-items: center;
 }
 
 .product-info {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.favorite-button-2 {
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.favorite-button-2 svg {
+  fill: none; 
+  stroke: black;
+  stroke-width: 2px;
+  transition: fill 0.2s ease-in-out;
+}
+
+.favorite-button-2.filled svg {
+  fill: black; 
 }
 
 @media (min-width: 768px) {

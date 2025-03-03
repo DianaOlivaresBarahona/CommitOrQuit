@@ -2,11 +2,19 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useSearch } from "../context/SearchContext"; // ✅ Use global state
 import "../stylesheet/productDetail.css";
-import FavoriteButton from "./FavoriteButton";
+import { Heart } from "lucide-react";
+import { useEffect } from "react";
+
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const { allProducts, error, isLoading } = useSearch(); // ✅ Get full product list
+  const { allProducts, favorites, toggleFavorite, error, isLoading } = useSearch(); // ✅ Get full product list
+
+  useEffect(() => {
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  }, []);
 
   if (error) return <div>Failed to load product</div>;
   if (isLoading) return <div>Loading product...</div>;
@@ -14,6 +22,8 @@ const ProductDetail = () => {
   const product = allProducts?.find((p) => p.id === parseInt(id)); // Find product by ID
 
   if (!product) return <div>Product not found</div>;
+
+  const isFavorite = favorites.some((fav) => fav.id === product.id);
 
   return (
     <>
@@ -42,7 +52,16 @@ const ProductDetail = () => {
             >
               Add to cart
             </button>
-            <FavoriteButton />
+
+            <button
+                className={`favorite-button-2 ${isFavorite ? "filled" : ""}`}
+                onClick={(e) => {
+                  e.preventDefault(); 
+                  toggleFavorite(product);
+                }}
+                > 
+                <Heart size={24} color={isFavorite ? "black" : "grey"} fill={isFavorite ? "black" : "none"} />
+              </button>
           </div>
         </div>
       </div>
