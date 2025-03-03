@@ -22,44 +22,44 @@ const App = () => {
   const [showFavorite, setShowFavorite] = useState(false);
 
   return (
-    <>
-      <CartProvider>
-        <SearchProvider>
-          <ScrollToTop />
+    <CartProvider>
+      <SearchProvider>
+        <ScrollToTop />
+        <div className="app-container">
+          {" "}
+          {/* Viktigt: ny wrapper med flex layout */}
           <Header
             showFavorite={showFavorite}
             setShowFavorite={setShowFavorite}
           />
-
-          <Routes>
-            <Route path="/" element={<Home />} />
-
-            <Route
-              path="/favorite"
-              element={<FavoritesPage setShowFavorite={setShowFavorite} />}
-            />
-
-            <Route
-              path="/cart"
-              element={
-                <ShoppingCartPage
-                  showCart={showCart}
-                  setShowCart={setShowCart}
-                />
-              }
-            />
-            <Route path="/login" element={<Auth />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/product/:id" element={<ProductPage />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
-            <Route path="/confirmation" element={<ConfirmationPage />} />
-          </Routes>
-
+          <main className="app-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route
+                path="/favorite"
+                element={<FavoritesPage setShowFavorite={setShowFavorite} />}
+              />
+              <Route
+                path="/cart"
+                element={
+                  <ShoppingCartPage
+                    showCart={showCart}
+                    setShowCart={setShowCart}
+                  />
+                }
+              />
+              <Route path="/login" element={<Auth />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/product/:id" element={<ProductPage />} />
+              <Route path="/checkout" element={<CheckoutPage />} />
+              <Route path="/confirmation" element={<ConfirmationPage />} />
+            </Routes>
+          </main>
           <CartButton showCart={showCart} setShowCart={setShowCart} />
           <Footer />
-        </SearchProvider>
-      </CartProvider>
-    </>
+        </div>
+      </SearchProvider>
+    </CartProvider>
   );
 };
 
