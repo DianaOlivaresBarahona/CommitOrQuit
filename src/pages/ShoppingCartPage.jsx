@@ -3,15 +3,22 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import "../stylesheet/shoppingCart.css";
 import { MdDeleteForever } from "react-icons/md";
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 const ShoppingCartPage = ({ setShowCart }) => {
   const navigate = useNavigate();
-  const { cart, removeFromCart, clearCart } = useCart();
+  const { cart, removeFromCart, updateQuantity } = useCart();
 
   useEffect(() => {
     setShowCart(true);
     return () => setShowCart(false);
   }, [setShowCart]);
+
+  const calculateTotal = () => {
+    return cart
+      .reduce((total, item) => total + item.price * item.quantity, 0)
+      .toFixed(2);
+  };
 
   const goToCheckout = () => {
     navigate("/checkout");
@@ -33,17 +40,39 @@ const ShoppingCartPage = ({ setShowCart }) => {
                   src={item.image}
                   alt={item.title}
                 />
-                <div className="product-cart-description">
-                  {item.title} - {item.price} €
+                <div className="product-cart-info">
+                  <div className="product-cart-description">
+                    <h3>{item.title}</h3>
+                    <p>{item.price} €</p>
+                  </div>
+                  <div className="cart-actions">
+                    <button
+                      className="quantity-btn"
+                      onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                    >
+                      <FaMinus />
+                    </button>
+                    <span>{item.quantity}</span>
+                    <button
+                      className="quantity-btn"
+                      onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                    >
+                      <FaPlus />
+                    </button>
+                    <MdDeleteForever
+                      className="deleteBtn"
+                      onClick={() => removeFromCart(item.id)}
+                    />
+                  </div>
                 </div>
-                <MdDeleteForever
-                  className="deleteBtn"
-                  onClick={() => removeFromCart(item.id)}
-                />
               </li>
             ))}
           </ul>
-          <button onClick={clearCart}>Clear</button>
+
+          <div className="total-price">
+            <h3>Total: {calculateTotal()} €</h3>
+          </div>
+
           <button className="checkout-button" onClick={goToCheckout}>
             Go To Checkout
           </button>
