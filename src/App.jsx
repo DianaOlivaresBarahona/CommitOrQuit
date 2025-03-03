@@ -11,7 +11,6 @@ import { SearchProvider } from "./context/SearchContext";
 import FavoritesPage from "./pages/FavoritesPage";
 import Auth from "./components/Auth";
 import Profile from "./pages/Profile";
-import FilterButtons from "./components/FilterButtons";
 import ProductPage from "./pages/ProductPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import ConfirmationPage from "./pages/ConfirmationPage";
@@ -31,7 +30,6 @@ const App = () => {
             showFavorite={showFavorite}
             setShowFavorite={setShowFavorite}
           />
-          <FilterButtons />
 
           <Routes>
             <Route path="/" element={<Home />} />
