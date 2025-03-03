@@ -1,10 +1,10 @@
 import { createContext, useContext, useState } from "react";
-/* import useProducts from "./UseProducts"; */
+import useLocalStorage from "../../hook/useLocalStorage";
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useLocalStorage("cart", []);
 
   const addToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
@@ -19,9 +19,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, clearCart }}
-    >
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );
