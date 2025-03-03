@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../stylesheet/navbar.css";
-import SearchField from "./searchfield";
+import SearchField from "./SearchField";
 import FavoriteButton from "./FavoriteButton";
 import ButtonText from "./ButtonText";
 
@@ -29,7 +29,11 @@ const Navbar = ({ showFavorite, setShowFavorite }) => {
         </div>
 
         <div className="buttons-right">
-          <ButtonText onClick={() => setSearchOpen(!searchOpen)} />
+          <ButtonText
+            onClick={() => setSearchOpen(!searchOpen)}
+            value=""
+            icon="search"
+          />
           <FavoriteButton
             showFavorite={showFavorite}
             setShowFavorite={setShowFavorite}
