@@ -36,6 +36,8 @@ export const SearchProvider = ({ children }) => {
       value={{
         searchItem,
         setSearchItem,
+        category,
+        setCategory,
         filteredProducts,
         allProducts: data,
         favorites,
