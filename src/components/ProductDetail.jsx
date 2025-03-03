@@ -1,12 +1,15 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useSearch } from "../context/SearchContext"; // ✅ Use global state
+import { useSearch } from "../context/SearchContext";
+import { useCart } from "../context/CartContext";
 import "../stylesheet/productDetail.css";
 import FavoriteButton from "./FavoriteButton";
+import AddCartBtn from "./AddCartBtn";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const { allProducts, error, isLoading } = useSearch(); // ✅ Get full product list
+  const { allProducts, error, isLoading } = useSearch();
+  const { addToCart } = useCart();
 
   if (error) return <div>Failed to load product</div>;
   if (isLoading) return <div>Loading product...</div>;
@@ -36,12 +39,7 @@ const ProductDetail = () => {
           </div>
           <div className="product-detail-buttons">
             {" "}
-            <button
-              className="add-to-cart-button"
-              onClick={() => addToCart(product)}
-            >
-              Add to cart
-            </button>
+            <AddCartBtn onClick={() => addToCart(product)} />
             <FavoriteButton />
           </div>
         </div>

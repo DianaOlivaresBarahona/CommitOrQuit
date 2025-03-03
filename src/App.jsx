@@ -16,6 +16,7 @@ import ProductPage from "./pages/ProductPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import ConfirmationPage from "./pages/ConfirmationPage";
 import ScrollToTop from "./components/ScrollToTop";
+import { CartProvider } from "./context/CartContext";
 
 const App = () => {
   const [showCart, setShowCart] = useState(false);
@@ -23,35 +24,43 @@ const App = () => {
 
   return (
     <>
-      <SearchProvider>
-        <ScrollToTop />
-        <Header showFavorite={showFavorite} setShowFavorite={setShowFavorite} />
-        <FilterButtons />
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-
-          <Route
-            path="/favorite"
-            element={<FavoritesPage setShowFavorite={setShowFavorite} />}
+      <CartProvider>
+        <SearchProvider>
+          <ScrollToTop />
+          <Header
+            showFavorite={showFavorite}
+            setShowFavorite={setShowFavorite}
           />
+          <FilterButtons />
 
-          <Route
-            path="/cart"
-            element={
-              <ShoppingCartPage showCart={showCart} setShowCart={setShowCart} />
-            }
-          />
-          <Route path="/login" element={<Auth />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/product/:id" element={<ProductPage />} />
-          <Route path="/checkout" element={<CheckoutPage />} />
-          <Route path="/confirmation" element={<ConfirmationPage />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
 
-        <CartButton showCart={showCart} setShowCart={setShowCart} />
-        <Footer />
-      </SearchProvider>
+            <Route
+              path="/favorite"
+              element={<FavoritesPage setShowFavorite={setShowFavorite} />}
+            />
+
+            <Route
+              path="/cart"
+              element={
+                <ShoppingCartPage
+                  showCart={showCart}
+                  setShowCart={setShowCart}
+                />
+              }
+            />
+            <Route path="/login" element={<Auth />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/product/:id" element={<ProductPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/confirmation" element={<ConfirmationPage />} />
+          </Routes>
+
+          <CartButton showCart={showCart} setShowCart={setShowCart} />
+          <Footer />
+        </SearchProvider>
+      </CartProvider>
     </>
   );
 };

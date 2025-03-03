@@ -47,39 +47,24 @@ h2 {
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 2; 
+  z-index: 2;
 }
 
 .favorite-button svg {
-  fill: none; 
+  fill: none;
   stroke: black;
   stroke-width: 2px;
   transition: fill 0.2s ease-in-out;
 }
 
 .favorite-button.filled svg {
-  fill: black; 
+  fill: black;
 }
 
 .product-card-small-group {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.add-to-cart-button {
-  background-color: #32009a;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 15px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.add-to-cart-button:hover {
-  background-color: #22006d;
 }
 
 h2 {
