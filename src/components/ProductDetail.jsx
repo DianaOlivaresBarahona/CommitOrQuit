@@ -26,7 +26,7 @@ const ProductDetail = () => {
         />
         <div className="product-detail-info">
           <div className="product-info">
-            <h2>{product.title}</h2>
+            <h2 className="title">{product.title}</h2>
             <div className="ratings">
               <p>⭐ {product.rating.rate}</p>
               <p>{product.rating.count} reviews</p>{" "}
