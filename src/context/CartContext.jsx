@@ -1,9 +1,10 @@
 import { createContext, useContext, useState } from "react";
+import useLocalStorage from "../../hook/useLocalStorage";
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useLocalStorage("cart", []);
 
   const addToCart = (product) => {
     setCart((prevCart) => {
@@ -38,6 +39,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
+
     <CartContext.Provider
       value={{ cart, addToCart, removeFromCart, updateQuantity }}
     >
