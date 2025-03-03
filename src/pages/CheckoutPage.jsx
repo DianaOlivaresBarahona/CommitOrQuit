@@ -1,17 +1,32 @@
 import React from "react";
 import "../stylesheet/checkoutPage.css";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const CheckoutPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const cart = location.state?.cart || [];
+  const total = location.state?.total || "0.00";
 
-  const handleSubmitOrder = () => { 
-    navigate("/confirmation"); 
-   };
-  
+  const handleSubmitOrder = () => {
+    navigate("/confirmation");
+  };
+
   return (
     <div className="checkout-page">
       <h1>Check and submit your order</h1>
+
+      <div className="checkout-items">
+        {cart.map((item) => (
+          <div key={item.id} className="checkout-item">
+            <h4>{item.title}</h4>
+            <p>Price: {item.price} €</p>
+            <p>Quantity: {item.quantity}</p>
+          </div>
+        ))}
+        <p className="checkout-total">Total Amount: {total} €</p>
+      </div>
 
       <div className="checkout-section">
         <div className="checkout-row">
@@ -45,7 +60,10 @@ const CheckoutPage = () => {
         </div>
       </div>
 
-      <button className="checkout-button" onClick={handleSubmitOrder}> Submit order </button>
+      <button className="checkout-button" onClick={handleSubmitOrder}>
+        {" "}
+        Submit order{" "}
+      </button>
 
       <p className="checkout-terms">
         By placing this order, you agree to our{" "}

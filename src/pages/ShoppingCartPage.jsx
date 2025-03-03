@@ -21,7 +21,7 @@ const ShoppingCartPage = ({ setShowCart }) => {
   };
 
   const goToCheckout = () => {
-    navigate("/checkout");
+    navigate("/checkout", { state: { cart, total: calculateTotal() } });
   };
 
   return (
