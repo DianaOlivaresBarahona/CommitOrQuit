@@ -57,31 +57,16 @@ const Navbar = ({ showFavorite, setShowFavorite }) => {
             </li>
             <hr />
             <li>
-              <Link to="/all" onClick={() => setMenuOpen(false)}>
-                ALL
-              </Link>
-            </li>
-            <li>
-              <Link to="/clothing" onClick={() => setMenuOpen(false)}>
-                CLOTHING
-              </Link>
-            </li>
-            <li>
-              <Link to="/jewelry" onClick={() => setMenuOpen(false)}>
-                JEWELRY
-              </Link>
-            </li>
-            <li>
-              <Link to="/electronics" onClick={() => setMenuOpen(false)}>
-                ELECTRONICS
-              </Link>
-            </li>
-            <hr />
-            <li>
               <Link to="/settings" onClick={() => setMenuOpen(false)}>
                 SETTINGS
               </Link>
             </li>
+            <li>
+              <Link to="/terms" onClick={() => setMenuOpen(false)}>
+                TERMS & CONDITIONS
+              </Link>
+            </li>
+            <hr />
             <li>
               <Link to="/faq" onClick={() => setMenuOpen(false)}>
                 FAQ
@@ -90,11 +75,6 @@ const Navbar = ({ showFavorite, setShowFavorite }) => {
             <li>
               <Link to="/contact" onClick={() => setMenuOpen(false)}>
                 CONTACT US
-              </Link>
-            </li>
-            <li>
-              <Link to="/terms" onClick={() => setMenuOpen(false)}>
-                TERMS & CONDITIONS
               </Link>
             </li>
           </ul>
