@@ -9,51 +9,28 @@
   background-color: white;
   font-family: "Poppins", sans-serif;
   color: black;
+  margin-bottom: 40px;
 }
 
 .checkout-page h1 {
-  font-size: 18px;
+  font-size: 2em;
   font-weight: bold;
   margin-bottom: 12px;
 }
 
 .checkout-page p {
   font-size: 14px;
-  margin-bottom: 8px;
-}
-
-.checkout-steps {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 12px;
-  margin-bottom: 16px;
-}
-
-.step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  font-weight: 600;
-  color: #32009a;
-}
-
-.step i {
-  background-color: #f1f1f1;
-  padding: 8px;
-  border-radius: 50%;
-  font-size: 16px;
 }
 
 .checkout-section {
-  background-color: #f9f9f9;
-  padding: 12px;
-  margin-bottom: 12px;
-  border-radius: 8px;
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  background-color: #eeeeee;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  gap: 15px;
+  text-align: start;
 }
 
 .checkout-button {
@@ -78,26 +55,98 @@
   padding: 10px;
 }
 
+.checkout-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 40px 10px;
+  justify-content: space-between;
+  text-align: start;
+}
+.checkout-item {
+  display: flex;
+  flex-direction: row;
+  justify-items: space-between;
+}
+
+p.checkout-total {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+h4.expectedDeliv,
+h4.packageTitle,
+h4.paymentTitle {
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+p.dateDeliv,
+p.freeDeliv,
+p.adress,
+p.paymentMethod {
+  color: rgb(35, 35, 35);
+  font-weight: 400;
+  gap: 10px;
+}
+
+a.changeLink {
+  color: #31009a;
+  text-decoration-line: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+img.klarnaIcon {
+  height: 28px;
+  width: 42px;
+}
+
+.paymentIcon {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.payment {
+  display: flex;
+  flex-direction: column;
+}
+
+h4.productName,
+p.price,
+p.quatity {
+  max-width: 150px;
+  margin: 10px;
+}
+
+.checkoutNbtn {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
 @media (min-width: 768px) {
   .checkout-page {
+    display: flex;
     padding: 32px;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
-  }
-
-  .checkout-steps {
     flex-direction: row;
-    justify-content: space-between;
-    font-size: 14px;
-  }
-
-  .step {
-    flex-direction: row;
-    gap: 8px;
+    justify-items: center;
+    gap: 10rem;
   }
 
   .checkout-button {
-    width: fit-content;
-    padding: 12px 24px;
+    max-height: 50px;
+    max-width: 350px;
+  }
+
+  .checkout-section {
+    max-width: 400px;
+    max-height: 400px;
   }
 }
