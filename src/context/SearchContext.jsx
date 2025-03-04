@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext } from "react";
 import useProducts from "./UseProducts"; // Hämtar produkter från API
+import useLocalStorage from "../../hook/useLocalStorage";
 
 const SearchContext = createContext();
 
@@ -7,7 +8,8 @@ export const SearchProvider = ({ children }) => {
   const [searchItem, setSearchItem] = useState(""); // Global sökterm
   const [category, setCategory] = useState("All"); //  Ny kategori-state
   const { data, error, isLoading } = useProducts(); // Hämtar produkter
-  const [favorites, setFavorites] = useState([]); // (+) Spara favorite products
+
+  const [favorites, setFavorites] = useLocalStorage("favorites", []); 
 
   // 🔥 Flyttad filtrering hit
   const filteredProducts = data
