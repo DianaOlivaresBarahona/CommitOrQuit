@@ -2,50 +2,29 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router";
 import { FaHeart } from "react-icons/fa";
 import "../stylesheet/favoriteButton.css";
+import { Heart } from "lucide-react";
 
-const FavoriteButton = ({ showFavorite, setShowFavorite }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
+const FavoriteButton = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const isFavoritePage = location.pathname === "/favorite";
 
   const handleClick = () => {
-    if (isFavoritePage && isFavorite) {
-      setIsFavorite(false);
-      navigate("/");
-      if (typeof setShowFavorite === "function") {
-        setShowFavorite(false);
-      }
-    } else if (isFavoritePage) {
-    } else {
-      setIsFavorite(true);
+    if (!isFavoritePage) {
       navigate("/favorite");
-      if (typeof setShowFavorite === "function") {
-        setShowFavorite(true);
-      }
     }
   };
-
-  useEffect(() => {
-    if (isFavoritePage) {
-      setIsFavorite(true);
-    }
-  }, [isFavoritePage]);
 
   return (
     <button
       onClick={handleClick}
-      className={`favoriteBtn ${
-        isFavorite || isFavoritePage ? "filled" : "empty"
-      }`}
+      className={`favoriteBtn ${isFavoritePage ? "filled" : "empty"}`}
       disabled={false}
     >
       <FaHeart
-        className={
-          isFavorite || isFavoritePage ? "heart-filled" : "heart-empty"
-        }
-        size={32}
+        className={isFavoritePage ? "heart-filled" : "heart-empty"}
+        size={18}
       />
     </button>
   );
