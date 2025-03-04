@@ -50,7 +50,6 @@ const ProductCardSmall = ({ product }) => {
                   className="product-img"
                   src={product.image}
                   alt={product.title}
-                  width="100"
                 />
               </Link>
             </div>
