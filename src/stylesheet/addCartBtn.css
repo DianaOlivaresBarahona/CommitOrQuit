@@ -12,3 +12,13 @@
 .add-to-cart-button:hover {
   background-color: #22006d;
 }
+
+.add-to-cart-button.added {
+  background-color: #62a362;
+  transform: scale(1.1);
+}
+
+.add-to-cart-button:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease-in-out;
+}
