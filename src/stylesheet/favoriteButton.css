@@ -10,8 +10,8 @@
 
 .favoriteBtn.empty .heart-empty,
 .favoriteBtn.filled .heart-filled {
-  width: 30px; /* Minska ikonens storlek */
-  height: 30px; /* Minska ikonens storlek */
+  width: 30px;
+  height: 30px;
 }
 .favoriteBtn.empty .heart-empty {
   color: transparent;
