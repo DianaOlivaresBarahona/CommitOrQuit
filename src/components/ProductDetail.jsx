@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useSearch } from "../context/SearchContext";
 import { useCart } from "../context/CartContext";
-import "../stylesheet/productDetail.css";
+import "../stylesheet/ProductDetail.css";
 
 import { Heart } from "lucide-react";
 import { useEffect } from "react";
