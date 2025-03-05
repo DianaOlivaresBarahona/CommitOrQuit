@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Input from "./Input";
+import Input from "./input";
 import ButtonText from "./ButtonText";
 import "../stylesheet/searchField.css";
 import { useSearch } from "../context/SearchContext";
