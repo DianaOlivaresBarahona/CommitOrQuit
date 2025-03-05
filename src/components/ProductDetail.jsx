@@ -6,12 +6,13 @@ import "../stylesheet/productDetail.css";
 
 import { Heart } from "lucide-react";
 import { useEffect } from "react";
-import FavoriteButton from "./FavoriteButton";
+
 import AddCartBtn from "./AddCartBtn";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const { allProducts, favorites, toggleFavorite, error, isLoading } = useSearch(); // ✅ Get full product list
+  const { allProducts, favorites, toggleFavorite, error, isLoading } =
+    useSearch();
   const { addToCart } = useCart();
 
   useEffect(() => {
@@ -23,7 +24,7 @@ const ProductDetail = () => {
   if (error) return <div>Failed to load product</div>;
   if (isLoading) return <div>Loading product...</div>;
 
-  const product = allProducts?.find((p) => p.id === parseInt(id)); // Find product by ID
+  const product = allProducts?.find((p) => p.id === parseInt(id));
 
   if (!product) return <div>Product not found</div>;
 
@@ -50,18 +51,20 @@ const ProductDetail = () => {
           </div>
           <div className="product-detail-buttons">
             {" "}
-
-             <AddCartBtn onClick={() => addToCart(product)} />
+            <AddCartBtn onClick={() => addToCart(product)} />
             <button
-                className={`favorite-button-2 ${isFavorite ? "filled" : ""}`}
-                onClick={(e) => {
-                  e.preventDefault(); 
-                  toggleFavorite(product);
-                }}
-                > 
-                <Heart size={24} color={isFavorite ? "black" : "grey"} fill={isFavorite ? "black" : "none"} />
-              </button>
-
+              className={`favorite-button-2 ${isFavorite ? "filled" : ""}`}
+              onClick={(e) => {
+                e.preventDefault();
+                toggleFavorite(product);
+              }}
+            >
+              <Heart
+                size={24}
+                color={isFavorite ? "black" : "grey"}
+                fill={isFavorite ? "black" : "none"}
+              />
+            </button>
           </div>
         </div>
       </div>

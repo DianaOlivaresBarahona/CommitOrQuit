@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
 .Navbar {
-  position: fixed; /* Ändrad från absolute till fixed */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* Sätter navbaren över allt annat */
+  z-index: 1000;
   background-color: #ffffff;
   display: flex;
   align-items: center;
@@ -23,7 +23,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   font-size: x-large;
-  text-decoration: none; /* Tar bort understrykningen */
+  text-decoration: none;
   color: inherit;
 }
 
@@ -32,10 +32,9 @@
   right: 15px;
   display: flex;
   align-items: center;
-  gap: 5px; /* Mellanrum mellan knapparna */
+  gap: 5px;
 }
 
-/* Se till att knapparna inte krymper bort */
 .search-button,
 .favoriteBtn {
   flex-shrink: 0;

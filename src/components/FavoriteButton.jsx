@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router";
 import { FaHeart } from "react-icons/fa";
 import "../stylesheet/favoriteButton.css";
-import { Heart } from "lucide-react";
 
 const FavoriteButton = () => {
   const navigate = useNavigate();
@@ -22,10 +21,7 @@ const FavoriteButton = () => {
       className={`favoriteBtn ${isFavoritePage ? "filled" : "empty"}`}
       disabled={false}
     >
-      <FaHeart
-        className={isFavoritePage ? "heart-filled" : "heart-empty"}
-        size={18}
-      />
+      <FaHeart className={isFavoritePage ? "heart-filled" : "heart-empty"} />
     </button>
   );
 };
