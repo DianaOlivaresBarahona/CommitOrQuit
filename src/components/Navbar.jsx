@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../stylesheet/navbar.css";
+import "../stylesheet/Navbar.css";
 import SearchField from "./SearchField";
 import FavoriteButton from "./FavoriteButton";
 import ButtonText from "./ButtonText";
