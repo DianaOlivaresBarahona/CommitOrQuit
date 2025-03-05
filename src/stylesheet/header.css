@@ -2,5 +2,5 @@ header {
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
-  padding-top: 60px; /* Justera så det matchar navbarens höjd */
+  padding-top: 60px;
 }

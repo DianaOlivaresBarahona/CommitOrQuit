@@ -1,26 +1,28 @@
-.favoriteBtn.empty,
-.favoriteBtn.filled {
+.favoriteBtn {
   background-color: transparent;
   border: none;
   transition: all 0.3s ease;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: visible;
 }
 
-.favoriteBtn.empty .heart-empty,
-.favoriteBtn.filled .heart-filled {
+.favoriteBtn .heart-empty,
+.favoriteBtn .heart-filled {
   width: 30px;
-  height: 30px;
-}
-.favoriteBtn.empty .heart-empty {
-  color: transparent;
-  stroke: #202020;
-  fill: white;
-  stroke-width: 20px;
+  height: 21px;
+  overflow: visible;
 }
 
-.favoriteBtn.filled .heart-filled {
+.favoriteBtn .heart-empty {
+  color: transparent;
+  stroke: #030303;
+  fill: rgb(255, 255, 255);
+  stroke-width: 45px;
+}
+
+.favoriteBtn .heart-filled {
   color: black;
   fill: black;
 }

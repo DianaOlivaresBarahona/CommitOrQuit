@@ -4,18 +4,18 @@
 }
 
 .search-wrapper {
-  position: relative; /* Låt den hamna i flödet */
-  top: 30px; /* Skjut ner den så den hamnar under navbaren */
+  position: relative;
+  top: 30px;
   width: 100%;
   background: rgb(255, 255, 255);
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 999; /* Se till att den är synlig */
+  z-index: 999;
 }
 
 .search-wrapper.visible {
-  display: flex; /* Visar sökfältet när .visible läggs till */
+  display: flex;
 }
 
 .search-wrapper.hidden {

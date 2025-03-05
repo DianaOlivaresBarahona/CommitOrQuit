@@ -11,8 +11,11 @@ const AddCartBtn = ({ onClick }) => {
   };
 
   return (
-    <button className={`add-to-cart-button ${added ? "added" : ""}`} onClick={handleClick}>
-      {added ? "Added!" : "Add to Cart"}
+    <button
+      className={`add-to-cart-button ${added ? "added" : ""}`}
+      onClick={handleClick}
+    >
+      {added ? "Added" : "Add to Cart"}
     </button>
   );
 };
