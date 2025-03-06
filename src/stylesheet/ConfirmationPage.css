@@ -52,44 +52,15 @@ h2 {
 .subscribe {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-content: center;
   margin-top: 1.5rem;
   width: 100%;
   max-width: 350px;
 }
 
-.subscribe input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-.subscribe-btn {
-  background-color: #32009a;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  width: 100%;
-  max-width: 250px;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.subscribe-btn:hover {
-  background-color: #5a00ff;
-}
-
 @media (min-width: 768px) {
   .content {
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-    text-align: left;
     max-width: 800px;
   }
 
@@ -97,17 +68,7 @@ h2 {
     max-width: 300px;
   }
 
-  .subscribe {
-    align-items: flex-start;
-  }
-
   .subscribe input {
     width: 250px;
-  }
-
-  .subscribe-btn {
-    font-size: 1rem;
-    width: 100%;
-    justify-content: center;
   }
 }

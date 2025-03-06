@@ -1,8 +1,7 @@
 .product-card-buy {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 10px;
+  padding: 10px 0px 10px 0px;
   border-bottom: 1px solid #ddd;
 }
 
@@ -25,9 +24,9 @@
   margin: 0;
   font-size: 16px;
   text-align: center;
-  word-wrap: break-word; /* Bryter upp ordet om det är för långt */
-  word-break: break-word; /* Säkerställer att långa ord delas korrekt */
-  max-width: 100%; /* Ser till att texten inte sträcker sig utanför container */
+  word-wrap: break-word;
+  word-break: break-word;
+  max-width: 500px;
 }
 
 .product-cart-description p {
@@ -68,21 +67,6 @@
   text-align: center;
   font-size: 18px;
   font-weight: bold;
-}
-
-.checkout-button {
-  background-color: #32009a;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 15px;
-}
-
-.checkout-button:hover {
-  background-color: #5c2fb7;
 }
 
 .cartPage {

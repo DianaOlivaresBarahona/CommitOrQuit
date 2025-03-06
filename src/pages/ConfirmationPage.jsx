@@ -1,6 +1,9 @@
 import React from "react";
-import "../stylesheet/ConfirmationPage.css";
+import "../stylesheet/confirmationPage.css";
+import "../stylesheet/buttonText.css";
 import { BsBagCheck } from "react-icons/bs";
+import Input from "../components/Input";
+import ButtonText from "../components/ButtonText";
 
 const ConfirmationPage = () => {
   return (
@@ -19,8 +22,12 @@ const ConfirmationPage = () => {
           </p>
         </div>
         <div className="subscribe">
-          <input type="email" placeholder="Email Address" />
-          <button className="subscribe-btn">Yes, sign me up!</button>
+          <Input
+            className="inputField"
+            type="email"
+            placeholder="Email Address"
+          />
+          <ButtonText className="buttonText">Yes, sign me up!</ButtonText>
         </div>
       </main>
     </div>

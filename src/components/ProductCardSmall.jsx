@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSearch } from "../context/SearchContext";
-import "../stylesheet/ProductCardSmall.css";
+import "../stylesheet/productCardSmall.css";
 import { Heart } from "lucide-react";
 import { useEffect } from "react";
 import AddCartBtn from "./AddCartBtn";

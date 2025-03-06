@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../stylesheet/Navbar.css";
+import "../stylesheet/navbar.css";
+import "../stylesheet/searchButton.css";
 import SearchField from "./SearchField";
 import FavoriteButton from "./FavoriteButton";
 import ButtonText from "./ButtonText";
+import { Search } from "lucide-react";
 
 const Navbar = ({ showFavorite, setShowFavorite }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,10 +32,11 @@ const Navbar = ({ showFavorite, setShowFavorite }) => {
 
         <div className="buttons-right">
           <ButtonText
+            className="searchButton"
             onClick={() => setSearchOpen(!searchOpen)}
-            value=""
-            icon="search"
-          />
+          >
+            <Search />
+          </ButtonText>
           <FavoriteButton
             showFavorite={showFavorite}
             setShowFavorite={setShowFavorite}

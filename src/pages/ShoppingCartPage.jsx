@@ -4,6 +4,8 @@ import { useCart } from "../context/CartContext";
 import "../stylesheet/shoppingCart.css";
 import { MdDeleteForever } from "react-icons/md";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import "../stylesheet/buttonText.css";
+import ButtonText from "../components/ButtonText";
 
 const ShoppingCartPage = ({ setShowCart }) => {
   const navigate = useNavigate();
@@ -42,7 +44,7 @@ const ShoppingCartPage = ({ setShowCart }) => {
                 />
                 <div className="product-cart-info">
                   <div className="product-cart-description">
-                    <h3>{item.title}</h3>
+                    <h3 className="productTitleCart">{item.title}</h3>
                     <p>{item.price} €</p>
                   </div>
                   <div className="cart-actions">
@@ -73,9 +75,9 @@ const ShoppingCartPage = ({ setShowCart }) => {
             <h3>Total: {calculateTotal()} €</h3>
           </div>
 
-          <button className="checkout-button" onClick={goToCheckout}>
+          <ButtonText className="buttonText" onClick={goToCheckout}>
             Go To Checkout
-          </button>
+          </ButtonText>
         </>
       )}
     </div>

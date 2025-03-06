@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Input from "./input";
+import Input from "./Input";
 import ButtonText from "./ButtonText";
 import "../stylesheet/searchField.css";
 import { useSearch } from "../context/SearchContext";
@@ -22,12 +22,15 @@ const SearchField = () => {
   return (
     <form className="searchField" onSubmit={handleSearch}>
       <Input
+        className="inputField"
         type="text"
         placeholder="What are you looking for?"
         onChange={handleChange}
         value={searchTerm}
       />
-      <ButtonText type="submit" value="" icon="search" />
+      <ButtonText className="searchButton" type="submit" value="">
+        <i data-lucide="search"></i>
+      </ButtonText>
     </form>
   );
 };

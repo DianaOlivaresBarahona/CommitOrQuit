@@ -1,7 +1,25 @@
 .buttonText {
-  background-color: #ffffff;
-  color: rgb(63, 62, 62);
+  margin: 1rem 0px;
+  background-color: #32009a;
+  color: white;
+  padding: 10px 15px;
   border: none;
-  margin-top: 7px;
-  padding: 5px 5px;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 280px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.buttonText:hover {
+  background-color: #5a00ff;
+}
+
+@media (min-width: 768px) {
+  .buttonText {
+    font-size: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
 }

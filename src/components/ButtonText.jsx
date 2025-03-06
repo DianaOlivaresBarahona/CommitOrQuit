@@ -1,13 +1,16 @@
-import "../stylesheet/buttonText.css";
-
-const ButtonText = ({ type = "button", onClick, value, icon = "search" }) => {
+const ButtonText = ({
+  type = "button",
+  onClick,
+  value,
+  icon,
+  className,
+  children,
+}) => {
   return (
-    <>
-      <button className="buttonText" type={type} onClick={onClick}>
-        {value}
-        <i data-lucide={icon}></i>
-      </button>
-    </>
+    <button className={className} type={type} onClick={onClick}>
+      {icon && <span className="icon">{icon}</span>} {children}
+      {value}
+    </button>
   );
 };
 

@@ -2,6 +2,7 @@ import React from "react";
 import "../stylesheet/checkoutPage.css";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import ButtonText from "../components/ButtonText";
 
 const CheckoutPage = () => {
   const navigate = useNavigate();
@@ -72,10 +73,10 @@ const CheckoutPage = () => {
               </div>
             </div>
           </div>
-          <button className="checkout-button" onClick={handleSubmitOrder}>
+          <ButtonText className="buttonText" onClick={handleSubmitOrder}>
             {" "}
             Submit order{" "}
-          </button>
+          </ButtonText>
 
           <p className="checkout-terms">
             By placing this order, you agree to our{" "}
